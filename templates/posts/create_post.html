@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card card-body">
+
+    <form method="POST" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+        <span> Title: </span>
+        {{form.post_title}}
+        <br>
+        <br>
+        <span> Picture: </span>
+        {{form.post_picture}}
+        <br>
+        <br>
+        <input class="btn btn-primary" type="submit" name="Update Information">
+    </form>
+</div>
+
+
+{% endblock %}
