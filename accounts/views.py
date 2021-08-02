@@ -1,7 +1,5 @@
 from django.shortcuts import redirect, render
 from .forms import *
-from .models import Profile
-from django.http import HttpResponse
 from .decorators import unauthenticated_user, allowed_users
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -44,7 +42,7 @@ def logoutPage(request):
     logout(request)
     return redirect('login')
 
-#Check
+
 @login_required(login_url='login')
 def profilePage(request):
 
