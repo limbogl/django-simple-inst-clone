@@ -4,7 +4,7 @@ from .decorators import unauthenticated_user, allowed_users
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-
+from django.conf import settings
 
 # Create your views here.
 @unauthenticated_user
@@ -48,7 +48,7 @@ def profilePage(request):
 
     posts = request.user.profile.post_set.all()
 
-    context={'posts':posts}
+    context={'posts':posts, 'media_url':settings.MEDIA_URL}
     return render(request, 'accounts/profile.html', context)
 
 

@@ -10,7 +10,7 @@ class Profile(models.Model):
     name = models.CharField(max_length=200, null=True, unique=True)
     email = models.CharField(max_length=200, null=True, blank=True)
     description = models.CharField(max_length=200, null=True, blank=True)
-    profile_pic = models.ImageField(upload_to='users/pictures', default='static/images/default-profile.png', null=True, blank=True)
+    profile_pic = models.ImageField(upload_to='users/pictures', default='images/default-profile.png', null=True, blank=True)
     date_created = models.DateTimeField(default=timezone.now)
     
     def __str__(self):
